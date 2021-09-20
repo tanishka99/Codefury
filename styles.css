@@ -541,10 +541,38 @@ section{
         margin-left: 1.5rem;
     }
 }
-@media screen and (min-width: 1200px){
-    .book-form .input-group:first-child{
+@media screen and (min-width: 1200px) {
+    .book-form .input-group:first-child {
         flex: 0 0 30%;
     }
 }
+
+
+//* body*/
+
+    .c1 {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .button {
+        background-color: #1d04aa;
+        border: none;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        border-radius: 12px;
+        margin: auto;
+        display: block;
+    }
+
+    .wrapper {
+        text-align: center;
+    }
+
 
 
