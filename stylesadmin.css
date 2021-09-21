@@ -26,6 +26,7 @@ html{
 
 body{
     background: url("./images/hero_background.jpg")center no-repeat;
+    background-size:     cover;   
     /*background-color: #cccccc;*/
     font-family: 'open sans', sans-serif;
     font-size: 1.6rem;
