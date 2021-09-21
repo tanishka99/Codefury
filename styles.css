@@ -548,31 +548,41 @@ section{
 }
 
 
-//* body*/
+/* body*/
 
-    .c1 {
-        border-collapse: collapse;
-        width: 100%;
-    }
+.c1 {
+    width: 80%;
+    font-size: medium;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
-    .button {
-        background-color: #1d04aa;
-        border: none;
-        color: white;
-        padding: 15px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 14px;
-        margin: 4px 2px;
-        border-radius: 12px;
-        margin: auto;
-        display: block;
-    }
+th, td {
+    padding: 5px;
+}
 
-    .wrapper {
-        text-align: center;
-    }
+.button {
+    background-color: #1d04aa;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    margin: auto;
+    display: block;
+}
 
+.wrapper {
+    text-align: center;
+}
 
+fieldset {
+    display: block;
+    border: 2px groove;
+    padding: 20px 20px;
+}
 
