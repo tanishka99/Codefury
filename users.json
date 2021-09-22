@@ -1,0 +1,9 @@
+[{"userName": "Priya","userRole":"Employee","userTelephone":"8462947285",
+  "userEmail": "priya01@gmail.com","userPassword": "hellufolks","lastlogintime": "2021-09-15 07-45-38"},
+  {"userName": "Shreya","userRole":"Employee","userTelephone":"9361840751",
+    "userEmail": "shreya79@gmail.com","userPassword": "happy","lastlogintime": "2021-09-07 01-44-10"},
+  {"userName": "Mohit","userRole":"Admin","userTelephone":"9361840751",
+    "userEmail": "mohit7@gmail.com","userPassword": "peace","lastlogintime": "2021-09-11 05-23-16"},
+  {"userName": "Rahul","userRole":"Employee","userTelephone":"9361840751",
+    "userEmail": "rahul59@gmail.com","userPassword": "enjoy","lastlogintime": "2021-09-03 06-46-17"}
+]
