@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="stylesignup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+             <h2>Signup</h2>
+        </div>    
+             
+                 <form class="form" id="form">
+                     <div class="form-control">
+                         <label>Name</label>
+                         <input type="text" name="" id="name" placeholder="Enter your name" autocomplete="off" >
+                         <i class="fas fa-check-circle"></i>
+                         <i class="fas fa-exclamation-circle"></i>
+                         <small>Error Msg</small>
+                     </div>
+
+                     <div class="form-control">
+                         <label>Role</label>
+                         <input type="radio" name="role" id="arole" value="Admin">Admin
+                         <!-- <br/> -->
+                        <input type="radio" name="role" id="brole" value="Borrower">Borrower
+                         <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Telephone</label>
+                        <input type="number" name="" id="telephone" placeholder="Enter your telephone number" autocomplete="off">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Email address</label>
+                        <input type="Email" name="" id="email" placeholder="Enter your email address" autocomplete="off">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                    </div>
+                    
+                    <div class="form-control">
+                        <label>Username same as email</label>
+                        <input type="checkbox" name="same" onclick="username1(this.form)">
+                       
+                    </div>
+                    
+
+                    
+
+                    <div class="form-control">
+                        <label>Username</label>
+                        <input type="text" name="" id="username" placeholder="Enter your username" autocomplete="off">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Password</label>
+                        <input type="Password" name="" id="password" placeholder="Enter your password" >
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Confirm Password</label>
+                        <input type="Password" name="" id="cpassword" placeholder="Enter your password again">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                    </div>
+                    
+                     <input type="submit" value="Submit"  class="btn form-btn btn-purple" name="">
+<!--                     <a href = "Login.html"> Submit </a>-->
+
+
+                 </form>
+         </div>
+        <script type="text/javascript">
+        const form = document.getElementById('form');
+        const name = document.getElementById('name');
+        const role = document.getElementById('role');
+        const telephone = document.getElementById('telephone');
+        const email = document.getElementById('email');
+        const username = document.getElementById('username');
+        const password = document.getElementById('password');
+        const cpassword = document.getElementById('cpassword');
+
+        form.addEventListener('submit', (event) =>{
+            event.preventDefault();
+            validate();
+        })
+
+        const validate=()=>{
+        
+            const nameVal = name.value.trim();
+            const roleVal = role.value.trim();
+            const telephoneVal = telephone.value.trim();
+            const emailVal = email.value.trim();
+            const usernameVal =username.value.trim();
+            const passwordVal = password.value.trim();
+            const cpasswordVal = cpassword.value.trim();
+            var correct_way=/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            var correct_email=/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            if(nameVal==""){
+                setErrorMsg(name,'Name cannot be blank');
+            }else{
+                setSuccessMsg(name);
+            }
+
+            if(emailVal==""){
+                setErrorMsg(email,'Email cannot be blank');
+            }else if(emailVal.match(correct_email)){
+                setSuccessMsg(email);
+                
+            }else{
+                setErrorMsg(email,'Not a valid email');
+            }
+
+            if(telephoneVal==""){
+                setErrorMsg(telephone,'Telephone cannot be blank');
+            }else if(telephoneVal.match(correct_way)){
+                setSuccessMsg(telephone);
+            }else{
+               
+                setErrorMsg(telephone,'Telphone is not valid');
+            }
+            
+            if(usernameVal==""){
+                setErrorMsg(username,'Username cannot be blank');
+            }else{
+                setSuccessMsg(username);
+            }
+
+            if(passwordVal==""){
+                setErrorMsg(password,'Password cannot be blank');
+            }else{
+                setSuccessMsg(password);
+            }
+
+            if(cpasswordVal==""){
+                setErrorMsg(cpassword,'Confirm Password cannot be blank');
+            }else if(cpasswordVal!=passwordVal){
+                setErrorMsg(cpassword, 'Those passwords didn’t match. Try again')
+            }
+            else{
+                setSuccessMsg(cpassword);
+            }
+
+            if(roleVal==""){
+                setErrorMsg(role,' Role cannot be blank');
+            }else{
+                setSuccessMsg(role);
+            }
+
+
+
+
+
+        }
+
+        function setErrorMsg(input, errormsgs){
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            formControl.className="form-control error";
+            small.innerText=errormsgs;
+        }
+
+        function setSuccessMsg(input){
+            const formControl = input.parentElement;
+            formControl.className= "form-control success";
+            
+        }
+        
+        function username1(p) {
+        if(p.same.checked == true) {
+            p.username.value = p.email.value;
+            
+        }
+    }
+       
+  
+
+
+        </script>
+</body>
+
+</html>
