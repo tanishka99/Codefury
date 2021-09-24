@@ -1,0 +1,145 @@
+/*Import the fonts used*/
+@import url('https://fonts.googleapis.com/css?family=Courgette|Open+Sans:400,800&display=swap');
+
+/*Basic reset*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background: #644bff;
+  padding: 0 20px;
+  overflow: auto;
+}
+
+main{
+  margin-bottom: 3em;
+}
+
+/* Page header */
+.section-head{
+  margin-top: 2rem;
+  text-align: center;
+  font-size: large;
+}
+
+/* Suggestion Search */
+::selection{
+  color: #fff;
+  background: #664AFF;
+}
+
+.wrapper{
+  max-width: 450px;
+  margin: 100px auto;
+}
+
+.wrapper .search-input{
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+}
+
+.search-input input{
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+
+.search-input.active input{
+  border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box{
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+  display: table;
+}
+
+.autocom-box table{
+  width: 50%;
+  margin: auto;
+  margin-bottom: 2em;
+  background-color: #fff;
+}
+
+.autocom-box table th{
+  display: table-row;
+}
+
+.autocom-box td{
+  border: 1px solid #cccccc;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+.autocom-box tr:hover{
+  background: #cccccc;
+}
+
+.search-input .icon{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #644bff;
+  cursor: pointer;
+}
+
+/* Contact form */
+.container{
+  width: 100%;
+  max-width: 120rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.contact {
+  width: 50%;
+  margin: auto;
+  background-color: white;
+}
+
+.contact h2 {
+  padding-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+.contact textarea {
+  resize: none;
+}
+
+.contact button{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  color: #644bff;
+  background-color: #fff;
+}
